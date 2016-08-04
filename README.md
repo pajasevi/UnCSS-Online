@@ -1,4 +1,4 @@
-# HCPP 2016 website
+# UnCSS Online
 
 ### Requirements:
 
