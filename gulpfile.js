@@ -1,8 +1,49 @@
-var gulp = require('gulp');
-var nodemon = require('gulp-nodemon');
-var plumber = require('gulp-plumber');
-var livereload = require('gulp-livereload');
+var gulp = require('gulp'),
+  nodemon = require('gulp-nodemon'),
+  plumber = require('gulp-plumber'),
+  livereload = require('gulp-livereload'),
+  concat = require('gulp-concat'),
+  postcss = require('gulp-postcss'),
+  cssnano = require('cssnano'),
+  reporter = require('postcss-reporter'),
+  cssnext = require('postcss-cssnext'),
+  uglify = require('gulp-uglify');
 
+gulp.task('styles', function () {
+  var processors = [
+    cssnext({browsers: ['last 2 versions']}),
+    cssnano({
+      discardComments: {
+        removeAll: true
+      }
+    }),
+    reporter()
+  ];
+  return gulp.src([
+      './node_modules/normalize.css/normalize.css',
+      './node_modules/milligram/dist/milligram.css',
+      './assets/css/style.css'
+    ])
+    .pipe(concat('style-compiled.css'))
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./public/css'))
+    .pipe(livereload());
+});
+
+gulp.task('scripts', function() {
+  return gulp.src([
+      'node_modules/whatwg-fetch/fetch.js',
+      './assets/js/main.js'
+    ])
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./public/js'))
+    .pipe(livereload());
+})
+
+gulp.task('watch', function() {
+  gulp.watch('./assets/*/*.*', ['styles', 'scripts']);
+});
 
 gulp.task('develop', function () {
   livereload.listen();
@@ -22,5 +63,8 @@ gulp.task('develop', function () {
 });
 
 gulp.task('default', [
-  'develop'
+  'styles',
+  'scripts',
+  'develop',
+  'watch'
 ]);

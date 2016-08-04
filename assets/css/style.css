@@ -1,0 +1,51 @@
+body {
+  padding: 10rem;
+}
+
+.header {
+  text-align: center;
+}
+
+textarea {
+  min-height: 20rem;
+  resize: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.button-large {
+  font-size: 1.4rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  padding: 0 2rem;
+  transition: height 0.3s;
+}
+
+.button-loading {
+  width: 5rem;
+  height: 5rem;
+  font-size: 0;
+  border-radius: 50%;
+
+  animation-name: loading;
+  animation-duration: 1.5s;
+  animation-delay: 0.3s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  animation-play-state: running;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+  0% {
+    box-shadow: 0 0 0 15px #fff inset;
+  }
+  50% {
+    box-shadow: 0 0 0 5px #FFF inset;
+  }
+  100% {
+    box-shadow: 0 0 0 15px #FFF inset;
+  }
+}
