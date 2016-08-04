@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "cssnano": "^3.7.3",
+    "es6-promise": "^3.2.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-livereload": "^3.8.0",
