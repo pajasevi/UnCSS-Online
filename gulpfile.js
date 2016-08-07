@@ -24,7 +24,7 @@ gulp.task('styles', function () {
       './node_modules/milligram/dist/milligram.css',
       './assets/css/style.css'
     ])
-    .pipe(concat('style-compiled.css'))
+    .pipe(concat('style.min.css'))
     .pipe(postcss(processors))
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload());

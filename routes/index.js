@@ -14,6 +14,10 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/uncss', function(req, res) {
+  res.redirect('/');
+});
+
 router.post('/uncss', upload.array(), function(req, res) {
 
   var name = uuid.v1();
@@ -36,7 +40,10 @@ router.post('/uncss', upload.array(), function(req, res) {
         inputHtml: req.body.inputHtml,
         inputCss: req.body.inputCss,
         outputCss: output,
-        error: error
+        error: {
+          name: error.name,
+          message: error.reason + '; Line:' + (error.line -1) + '; Column:' + error.column
+        }
       });
     }
 

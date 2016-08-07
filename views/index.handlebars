@@ -1,9 +1,21 @@
-<div class="header">
-  <h1>{{title }}</h1>
-</div>
-{{#if error}}
-  <p class="error">{{error}}</p>
-{{/if}}
+<div class="main">
+  <div class="header">
+    <h1>{{title }}</h1>
+    <h3>Usage:</h3>
+    <ul>
+      <li>Copy and paste your HTML and CSS into boxes below</li>
+      <li>Click button</li>
+      <li>Wait for magic to happen</li>
+      <li>Now unused CSS is gone, take and use the rest!</li>
+    </ul>
+  </div>
+
+  <div class="error" {{#unless error}}hidden{{/unless}}>
+    <h5 class="error-name">{{error.name}}</h5>
+    <div class="error-message">
+      {{error.message}}
+    </div>
+  </div>
 
   <form id="uncss-form" action="/uncss" method="post" enctype="multipart/form-data">
     <div class="row">
@@ -26,3 +38,13 @@
       <textarea placeholder="Take your shortened CSS and use it!" rows="20" name="outputCss" id="outputCss" readonly>{{outputCss}}</textarea>
     </div>
   </div>
+
+  <h3>Advanced usage</h3>
+  <p>
+    For advanced options please consider adding UnCSS into your devstack - Gulp, Grunt, PostCSS.
+  </p>
+</div>
+<div class="footer clearfix">
+  <span class="float-left">Github | UnCSS</span>
+  <span class="float-right">Made with &hearts; by <a href="https://twitter.com/pajasevi" target="_blank">@pajasevi</a></span>
+</div>

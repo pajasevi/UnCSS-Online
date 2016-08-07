@@ -1,8 +1,21 @@
 body {
-  padding: 10rem;
+  max-width: 160rem;
+  margin: auto;
+  background: url('/img/background.png') no-repeat center center #fff;
+  background-size: cover;
 }
 
-.header {
+.main {
+  padding: 5rem 2rem;
+
+  @media screen and (min-width: 40rem) {
+    & {
+      padding: 5rem 10rem;
+    }
+  }
+}
+
+.header h1 {
   text-align: center;
 }
 
@@ -36,6 +49,37 @@ textarea {
   animation-direction: normal;
   animation-play-state: running;
   animation-iteration-count: infinite;
+}
+
+.error {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #b50000;
+  background: #d60000;
+  color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px #b7b7b7;
+}
+
+.footer {
+  padding: 2rem 2rem;
+  background: #9b4dca;
+  color: #fff;
+
+  & a {
+    color: currentColor;
+    text-decoration: underline;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+
+  @media screen and (min-width: 40rem) {
+    & {
+      padding: 2rem 10rem;
+    }
+  }
 }
 
 @keyframes loading {
