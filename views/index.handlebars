@@ -1,14 +1,17 @@
 <div class="main">
   <div class="header">
     <h1>{{title }}</h1>
-    <h3>Usage:</h3>
-    <ul>
-      <li>Copy and paste your HTML and CSS into boxes below</li>
-      <li>Click button</li>
-      <li>Wait for magic to happen</li>
-      <li>Now unused CSS is gone, take and use the rest!</li>
-    </ul>
+    <p>
+      <strong>Simply UnCSS your styles online!</strong>
+    </p>
   </div>
+  <h3>Usage:</h3>
+  <ul>
+    <li>Copy and paste your HTML and CSS into boxes below</li>
+    <li>Click button</li>
+    <li>Wait for magic to happen</li>
+    <li>Now unused CSS <a href="https://www.youtube.com/watch?v=DgS4DD0CgHs" target="_blank">is gone</a>, take and use the rest!</li>
+  </ul>
 
   <div class="error" {{#unless error}}hidden{{/unless}}>
     <h5 class="error-name">{{error.name}}</h5>
@@ -41,10 +44,10 @@
 
   <h3>Advanced usage</h3>
   <p>
-    For advanced options please consider adding UnCSS into your devstack - Gulp, Grunt, PostCSS.
+    For advanced options please consider adding UnCSS to your devstack - <a href="https://github.com/ben-eb/gulp-uncss">Gulp</a>, <a href="https://github.com/addyosmani/grunt-uncss">Grunt</a>, <a href="https://github.com/RyanZim/postcss-uncss">PostCSS</a>.
   </p>
 </div>
 <div class="footer clearfix">
-  <span class="float-left">Github | UnCSS</span>
+  <span class="float-left"><a href="https://github.com/pajasevi/UnCSS-Online">Github</a> | <a href="https://github.com/giakki/uncss">UnCSS</a></span>
   <span class="float-right">Made with &hearts; by <a href="https://twitter.com/pajasevi" target="_blank">@pajasevi</a></span>
 </div>
