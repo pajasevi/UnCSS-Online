@@ -10,7 +10,8 @@ var uuid = require('node-uuid');
 
 router.get('/', function(req, res) {
   res.render('index', {
-    title: 'UnCSS Online!'
+    title: 'UnCSS Online!',
+    description: 'Simply UnCSS your styles online!'
   });
 });
 
@@ -37,6 +38,7 @@ router.post('/uncss', upload.array(), function(req, res) {
     else {
       res.render('index', {
         title: 'UnCSS Online!',
+        description: 'Simply UnCSS your styles online!',
         inputHtml: req.body.inputHtml,
         inputCss: req.body.inputCss,
         outputCss: output,
