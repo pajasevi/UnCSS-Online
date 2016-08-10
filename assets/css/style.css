@@ -1,27 +1,34 @@
-body {
-  max-width: 160rem;
-  margin: auto;
-  background: url('/img/background.png') no-repeat center center #fff;
-  background-size: cover;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
-.main {
-  padding: 5rem 2rem;
+body {
+  background: url('/img/background.png') no-repeat center center #fff;
+  background-size: cover;
+  box-sizing: border-box;
+}
 
-  @media screen and (min-width: 40rem) {
-    & {
-      padding: 5rem 10rem;
-    }
-  }
+.container {
+  max-width: 160rem;
+  margin: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .header {
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
   text-align: center;
+  background: #fff;
 }
 
 textarea {
   min-height: 20rem;
   resize: none;
+  background: #fff;
 }
 
 .text-center {
@@ -79,6 +86,30 @@ textarea {
     & {
       padding: 2rem 10rem;
     }
+  }
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+@keyframes octocat-wave{
+  0%,100% {
+    transform: rotate(0);
+  }
+  20%,60% {
+    transform: rotate(-25deg);
+  }
+  40%,80% {
+    transform: rotate(10deg);
   }
 }
 
