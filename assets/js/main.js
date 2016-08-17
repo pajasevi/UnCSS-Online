@@ -64,4 +64,15 @@
       document.querySelector('.error').style.display = 'block';
     });
   }, false);
+
+  var clipboard = new Clipboard('.js-clipboard');
+
+  clipboard.on('success', function() {
+    document.getElementById('js-clipboard-message').textContent = 'Copied to your clipboard';
+    document.getElementById('js-clipboard-message').removeAttribute('hidden');
+  });
+  clipboard.on('error', function() {
+    document.getElementById('js-clipboard-message').textContent = 'Press Command+C to copy';
+    document.getElementById('js-clipboard-message').removeAttribute('hidden');
+  });
 })();

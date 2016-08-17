@@ -34,6 +34,7 @@ gulp.task('scripts', function() {
   return gulp.src([
       './node_modules/es6-promise/dist/es6-promise.js',
       './node_modules/whatwg-fetch/fetch.js',
+      './node_modules/clipboard/dist/clipboard.js',
       './assets/js/main.js'
     ])
     .pipe(concat('main.min.js'))

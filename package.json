@@ -20,6 +20,7 @@
     "uncss": "^0.14.1"
   },
   "devDependencies": {
+    "clipboard": "^1.5.12",
     "cssnano": "^3.7.3",
     "es6-promise": "^3.2.1",
     "gulp": "^3.9.0",

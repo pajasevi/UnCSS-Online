@@ -48,6 +48,14 @@
       <textarea placeholder="Take your shortened CSS and use it!" rows="20" name="outputCss" id="outputCss" readonly>{{outputCss}}</textarea>
     </div>
   </div>
+  <div class="row">
+    <div class="column text-center">
+      <button class="button js-clipboard" data-clipboard-action="copy" data-clipboard-target="#outputCss">Copy to clipboard</button>
+      <p id="js-clipboard-message" hidden>
+
+      </p>
+    </div>
+  </div>
 
   <h3>Advanced usage</h3>
   <p>
