@@ -8,6 +8,11 @@ var uuid = require('node-uuid');
 
 /* GET home page. */
 
+// TODO temporary fix of https://github.com/giakki/uncss/pull/259
+function removeBanner(uncssedCss) {
+  return uncssedCss.split("\n").slice(1).join("\n");
+}
+
 router.get('/', function(req, res) {
   res.render('index', {
     title: 'UnCSS Online!',
@@ -31,7 +36,7 @@ router.post('/uncss', upload.array(), function(req, res) {
   }, function(error, output) {
     if (req.body.type === 'fetch') {
       res.json({
-        outputCss: output,
+        outputCss: removeBanner(output),
         error: error
       });
     }
