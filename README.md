@@ -1,5 +1,6 @@
 # UnCSS Online
-<img src="https://travis-ci.org/pajasevi/UnCSS-Online.svg">
+[![Build
+Status](https://travis-ci.org/pajasevi/UnCSS-Online.svg?branch=master)](https://travis-ci.org/pajasevi/UnCSS-Online)
 
 ### Requirements:
 
@@ -22,6 +23,11 @@ gulp styles
 (builds styles and runs livereload)
 ```
 gulp
+```
+
+### Run tests
+```
+npm test
 ```
 
 ## Production
