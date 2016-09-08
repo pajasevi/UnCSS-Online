@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "node ./node_modules/mocha/bin/mocha"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
@@ -20,6 +21,7 @@
     "uncss": "^0.14.1"
   },
   "devDependencies": {
+    "cheerio": "^0.22.0",
     "clipboard": "^1.5.12",
     "cssnano": "^3.7.4",
     "es6-promise": "^3.2.1",
@@ -31,9 +33,11 @@
     "gulp-postcss": "^6.1.1",
     "gulp-uglify": "^2.0.0",
     "milligram": "^1.1.0",
+    "mocha": "^3.0.2",
     "normalize.css": "^4.2.0",
     "postcss-cssnext": "^2.7.0",
     "postcss-reporter": "^1.4.1",
+    "supertest": "^2.0.0",
     "whatwg-fetch": "^1.0.0"
   }
 }
