@@ -1,4 +1,5 @@
 # UnCSS Online
+<img src="https://travis-ci.org/pajasevi/UnCSS-Online.svg">
 
 ### Requirements:
 
