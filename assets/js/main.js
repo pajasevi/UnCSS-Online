@@ -35,19 +35,13 @@
 
     submitButton.classList.add('button-loading');
 
-    if(!form.type) {
-      var hiddenInput = document.createElement('input');
+    var formData = new FormData(form);
 
-      hiddenInput.name = 'type';
-      hiddenInput.value = 'fetch';
-      hiddenInput.type = 'hidden';
-
-      form.appendChild(hiddenInput);
-    }
+    formData.append('type', 'fetch');
 
     fetch(formAction, {
       method: formMethod,
-      body: new FormData(form)
+      body: formData
     })
     .then(checkStatus)
     .then(parseJSON)
