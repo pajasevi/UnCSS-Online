@@ -32,7 +32,8 @@ router.post('/uncss', upload.array(), function(req, res) {
   fs.writeFileSync('temp/' + name + '.css', req.body.inputCss);
 
   uncss(['temp/' + name + '.html'], {
-    stylesheets: [name + '.css']
+    stylesheets: [name + '.css'],
+    javascriptEnabled: false
   }, function(error, output) {
     if (req.body.type === 'fetch') {
       res.json({
