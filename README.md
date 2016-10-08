@@ -1,6 +1,8 @@
 # UnCSS Online
 [![Build
 Status](https://travis-ci.org/pajasevi/UnCSS-Online.svg?branch=master)](https://travis-ci.org/pajasevi/UnCSS-Online)
+[![Dependency Status](https://david-dm.org/pajasevi/UnCSS-Online.svg)](https://david-dm.org/pajasevi/UnCSS-Online)
+[![devDependency Status](https://david-dm.org/pajasevi/UnCSS-Online/dev-status.svg)](https://david-dm.org/pajasevi/UnCSS-Online?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/pajasevi/UnCSS-Online.svg)](https://github.com/pajasevi/UnCSS-Online/issues)
 [![Donate bitcoin](https://img.shields.io/badge/donate-bitcoin-blue.svg)](https://blockchain.info/address/1Q36yoYdENS9AqjQtaHXFtaSqzUDuXp1at)
 
