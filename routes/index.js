@@ -10,6 +10,7 @@ var uuid = require('node-uuid');
 
 // TODO temporary fix of https://github.com/giakki/uncss/pull/259
 function removeBanner(uncssedCss) {
+  if (!uncssedCss) return null;
   return uncssedCss.split("\n").slice(1).join("\n");
 }
 
