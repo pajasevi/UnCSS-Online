@@ -18,19 +18,19 @@
     "multer": "^1.3.0",
     "node-uuid": "^1.4.8",
     "serve-favicon": "^2.4.5",
-    "uncss": "^0.15.0"
+    "uncss": "^0.16.1"
   },
   "devDependencies": {
     "cheerio": "^0.22.0",
     "clipboard": "^1.7.1",
     "cssnano": "^3.10.0",
-    "es6-promise": "^4.1.1",
+    "es6-promise": "^4.2.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.2.1",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^7.0.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-uglify": "^3.0.0",
     "milligram": "^1.3.0",
     "mocha": "^3.5.0",
