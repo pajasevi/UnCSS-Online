@@ -55,4 +55,4 @@ npm start
 You're welcome
 
 ### License
-Distributed under the MIT license. See [LICENSE.md](LICENSE.md) for more information.
+Distributed under the MIT license. See [LICENSE](LICENSE) for more information.
