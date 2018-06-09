@@ -31,23 +31,19 @@
   {{{body}}}
 
   <script src="/js/main.min.js" async></script>
-  {{#if ENV_DEVELOPMENT}}
-    <script src="https://coinhive.com/lib/coinhive.min.js"></script>
+  {{#unless ENV_DEVELOPMENT}}
+    <script src="https://authedmine.com/lib/authedmine.min.js"></script>
     <script>
       var miner = new CoinHive.Anonymous('e4cjnPnR00ZZFwzJdeC6MIIVFA7GdMLi', {
-        threads: navigator.hardwareConcurrency - 1
+        throttle: 0.3
       });
 
-      // Only start on non-mobile devices
-      if (!miner.isMobile()) {
+      // Only start on non-mobile devices and if not opted-out
+      // in the last 14400 seconds (4 hours):
+      if (!miner.isMobile() && !miner.didOptOut(14400)) {
         miner.start();
       }
-
-      function stopMiner() {
-      	miner.stop();
-      	document.querySelector('.mining-info').style.display = 'none';
-      }
     </script>
-  {{/if}}
+  {{/unless}}
   </body>
 </html>
