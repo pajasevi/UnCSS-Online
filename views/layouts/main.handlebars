@@ -34,9 +34,7 @@
   {{#unless ENV_DEVELOPMENT}}
     <script src="https://authedmine.com/lib/authedmine.min.js"></script>
     <script>
-      var miner = new CoinHive.Anonymous('e4cjnPnR00ZZFwzJdeC6MIIVFA7GdMLi', {
-        throttle: 0.3
-      });
+      var miner = new CoinHive.Anonymous('e4cjnPnR00ZZFwzJdeC6MIIVFA7GdMLi');
 
       // Only start on non-mobile devices and if not opted-out
       // in the last 14400 seconds (4 hours):
