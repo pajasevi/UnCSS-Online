@@ -59,7 +59,7 @@
     });
   }, false);
 
-  var clipboard = new Clipboard('.js-clipboard');
+  var clipboard = new ClipboardJS('.js-clipboard');
 
   clipboard.on('success', function() {
     document.getElementById('js-clipboard-message').textContent = 'Copied to your clipboard';
