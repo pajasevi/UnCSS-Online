@@ -72,20 +72,20 @@ textarea {
   padding: 2rem 2rem;
   background: #9b4dca;
   color: #fff;
+}
 
-  & a {
-    color: currentColor;
-    text-decoration: underline;
+footer a {
+  color: currentColor;
+  text-decoration: underline;
+}
 
-    &:hover {
-      color: #ccc;
-    }
-  }
+footer a:hover {
+  color: #ccc;
+}
 
-  @media screen and (min-width: 40rem) {
-    & {
-      padding: 2rem 10rem;
-    }
+@media screen and (min-width: 40rem) {
+  footer {
+    padding: 2rem 10rem;
   }
 }
 
