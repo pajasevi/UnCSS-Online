@@ -1,10 +1,10 @@
-var express = require('express');
-var router = express.Router();
-var uncss = require('uncss');
-var fs = require('fs');
-var multer  = require('multer');
-var upload = multer();
-var uuid = require('node-uuid');
+const express = require('express');
+const router = express.Router();
+const uncss = require('uncss');
+const fs = require('fs');
+const multer  = require('multer');
+const upload = multer();
+const uuid = require('node-uuid');
 
 /* GET home page. */
 
@@ -27,7 +27,7 @@ router.get('/uncss', function(req, res) {
 
 router.post('/uncss', upload.array(), function(req, res) {
 
-  var name = uuid.v1();
+  const name = uuid.v1();
 
   fs.writeFileSync('temp/' + name + '.html', req.body.inputHtml);
   fs.writeFileSync('temp/' + name + '.css', req.body.inputCss);
