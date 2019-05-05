@@ -1,16 +1,16 @@
-var gulp = require('gulp'),
-  nodemon = require('gulp-nodemon'),
-  plumber = require('gulp-plumber'),
-  livereload = require('gulp-livereload'),
-  concat = require('gulp-concat'),
-  postcss = require('gulp-postcss'),
-  cssnano = require('cssnano'),
-  reporter = require('postcss-reporter'),
-  cssnext = require('postcss-cssnext'),
-  uglify = require('gulp-uglify');
+const { src, dest, parallel, watch } = require('gulp');
+const nodemon = require('gulp-nodemon');
+const livereload = require('gulp-livereload');
+const concat = require('gulp-concat');
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const reporter = require('postcss-reporter');
+const cssnext = require('postcss-cssnext');
+const uglify = require('gulp-uglify');
+const pipeline = require('readable-stream').pipeline;
 
-gulp.task('styles', function () {
-  var processors = [
+const styles = () => {
+  const processors = [
     cssnext({browsers: ['last 2 versions']}),
     cssnano({
       discardComments: {
@@ -19,35 +19,32 @@ gulp.task('styles', function () {
     }),
     reporter()
   ];
-  return gulp.src([
+  return src([
       './node_modules/normalize.css/normalize.css',
       './node_modules/milligram/dist/milligram.css',
       './assets/css/style.css'
     ])
     .pipe(concat('style.min.css'))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./public/css'))
-    .pipe(livereload());
-});
+    .pipe(dest('./public/css'))
+};
 
-gulp.task('scripts', function() {
-  return gulp.src([
-      './node_modules/es6-promise/dist/es6-promise.js',
-      './node_modules/whatwg-fetch/fetch.js',
+const scripts = () => {
+  return pipeline(
+    src([
       './node_modules/clipboard/dist/clipboard.js',
       './assets/js/main.js'
-    ])
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./public/js'))
-    .pipe(livereload());
-})
+    ]).pipe(concat('main.min.js')),
+    uglify(),
+    dest('./public/js')
+  )
+};
 
-gulp.task('watch', function() {
-  gulp.watch('./assets/*/*.*', ['styles', 'scripts']);
-});
+const watchTask = () => {
+  return watch(['./assets/*/*.*'], (cb) => { cb() });
+};
 
-gulp.task('develop', function () {
+const develop = () => {
   livereload.listen();
   nodemon({
     script: 'bin/www',
@@ -62,11 +59,10 @@ gulp.task('develop', function () {
     this.stdout.pipe(process.stdout);
     this.stderr.pipe(process.stderr);
   });
-});
+};
 
-gulp.task('default', [
-  'styles',
-  'scripts',
-  'develop',
-  'watch'
-]);
+exports.styles = styles;
+exports.scripts = scripts;
+exports.develop = develop;
+exports.watch = watchTask;
+exports.default = parallel(styles, scripts, develop, watchTask);
