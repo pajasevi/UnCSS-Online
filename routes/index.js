@@ -19,10 +19,12 @@ router.post('/api/uncss', upload.array(), (req, res) => {
     assert.ok(req.body.inputHtml, new Error('cannot process empty HTML'));
     assert.ok(req.body.inputCss, new Error('cannot process empty CSS'));
 
-    uncss(req.body.inputHtml, {
+    const html = req.body.inputHtml.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+
+    uncss(html, {
       raw: req.body.inputCss,
-      javascriptEnabled: false,
-      banner: false
+      banner: false,
+      ignoreSheets: [/./]
     }, (error, output) => {
       res.json({
         outputCss: output,
