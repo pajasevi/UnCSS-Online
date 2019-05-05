@@ -4,20 +4,20 @@ const livereload = require('gulp-livereload');
 const concat = require('gulp-concat');
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
-const reporter = require('postcss-reporter');
-const cssnext = require('postcss-cssnext');
+const autoprefixer = require('autoprefixer');
 const uglify = require('gulp-uglify');
 const pipeline = require('readable-stream').pipeline;
 
 const styles = () => {
   const processors = [
-    cssnext({browsers: ['last 2 versions']}),
+    autoprefixer({browsers: ['last 2 versions']}),
     cssnano({
-      discardComments: {
-        removeAll: true
-      }
-    }),
-    reporter()
+      preset: ['default', {
+        discardComments: {
+          removeAll: true,
+        },
+      }]
+    })
   ];
   return src([
       './node_modules/normalize.css/normalize.css',

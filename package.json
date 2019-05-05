@@ -33,7 +33,6 @@
     "mocha": "^6.1.4",
     "normalize.css": "^8.0.0",
     "postcss-cssnext": "^3.1.0",
-    "postcss-reporter": "^6.0.1",
     "readable-stream": "^3.3.0",
     "supertest": "^4.0.2"
   }
