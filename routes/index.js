@@ -20,14 +20,8 @@ router.get('/uncss', function(req, res) {
 });
 
 router.post('/uncss', upload.array(), function(req, res) {
-
-  const name = uuid.v1();
-
-  fs.writeFileSync('temp/' + name + '.html', req.body.inputHtml);
-  fs.writeFileSync('temp/' + name + '.css', req.body.inputCss);
-
-  uncss(['temp/' + name + '.html'], {
-    stylesheets: [name + '.css'],
+  uncss(req.body.inputHtml, {
+    raw: req.body.inputCss,
     javascriptEnabled: false,
     banner: false
   }, function(error, output) {
@@ -50,9 +44,6 @@ router.post('/uncss', upload.array(), function(req, res) {
         }
       });
     }
-
-    fs.unlink('temp/' + name + '.html');
-    fs.unlink('temp/' + name + '.css');
   });
 });
 
