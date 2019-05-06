@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "uncssOnline",
+  "alias": "uncss-online.com",
   "routes": [
     { "src": "/api/uncss/", "dest": "/api/uncss/", "methods": ["POST"] },
     { "src": "/(.*)", "dest": "/dist/$1" }
