@@ -1,39 +1,26 @@
 {
   "name": "uncss-online",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "node ./node_modules/mocha/bin/mocha"
+    "dev": "concurrently \"parcel watch index.html\" \"now dev\"",
+    "build": "rm -rf dist && parcel build index.html",
+    "deploy": "now"
   },
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "compression": "^1.7.2",
-    "cookie-parser": "^1.4.3",
-    "dotenv": "^8.0.0",
+    "clipboard": "^2.0.4",
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
     "helmet": "^3.12.0",
-    "morgan": "^1.9.0",
+    "milligram": "^1.3.0",
     "multer": "^1.3.0",
-    "serve-favicon": "^2.5.0",
+    "nodent": "^3.2.11",
+    "normalize.css": "^8.0.0",
+    "regenerator": "^0.14.1",
+    "regenerator-runtime": "^0.13.2",
     "uncss": "^0.16.2"
   },
   "devDependencies": {
-    "cheerio": "^0.22.0",
-    "clipboard": "^2.0.4",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-livereload": "^4.0.1",
-    "gulp-nodemon": "^2.2.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-uglify": "^3.0.0",
-    "milligram": "^1.3.0",
-    "mocha": "^6.1.4",
-    "normalize.css": "^8.0.0",
-    "postcss-cssnext": "^3.1.0",
-    "readable-stream": "^3.3.0",
-    "supertest": "^4.0.2"
+    "concurrently": "^4.1.0",
+    "parcel-bundler": "^1.12.3"
   }
 }

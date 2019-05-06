@@ -1,20 +1,16 @@
 const express = require('express');
+const helmet = require('helmet');
 const assert = require('assert');
-const router = express.Router();
 const uncss = require('uncss');
 const multer  = require('multer');
+
 const upload = multer();
 
-/* GET home page. */
+const app = express();
 
-router.get('/', (req, res) => {
-  res.render('index', {
-    title: 'UnCSS Online!',
-    description: 'Simply UnCSS your styles online!'
-  });
-});
+app.use(helmet());
 
-router.post('/api/uncss', upload.array(), (req, res) => {
+app.post('*', upload.array(), (req, res) => {
   try {
     assert.ok(req.body.inputHtml, new Error('cannot process empty HTML'));
     assert.ok(req.body.inputCss, new Error('cannot process empty CSS'));
@@ -40,4 +36,4 @@ router.post('/api/uncss', upload.array(), (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = app;
