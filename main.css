@@ -1,3 +1,6 @@
+@import 'normalize.css/normalize.css';
+@import 'milligram/dist/milligram.min.css';
+
 *,
 *:before,
 *:after {
@@ -5,7 +8,7 @@
 }
 
 body {
-  background: url('/img/background.png') no-repeat center center #fff;
+  background: url('./img/background.png') no-repeat center center #fff;
   background-size: cover;
   box-sizing: border-box;
 }
@@ -74,17 +77,17 @@ textarea {
   color: #fff;
 }
 
-footer a {
+.footer a {
   color: currentColor;
   text-decoration: underline;
 }
 
-footer a:hover {
+.footer a:hover {
   color: #ccc;
 }
 
 @media screen and (min-width: 40rem) {
-  footer {
+  .footer {
     padding: 2rem 10rem;
   }
 }

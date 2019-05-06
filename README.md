@@ -1,58 +1,38 @@
 # UnCSS Online
-[![Build
-Status](https://travis-ci.org/pajasevi/UnCSS-Online.svg?branch=master)](https://travis-ci.org/pajasevi/UnCSS-Online)
 [![Dependency Status](https://david-dm.org/pajasevi/UnCSS-Online.svg)](https://david-dm.org/pajasevi/UnCSS-Online)
 [![devDependency Status](https://david-dm.org/pajasevi/UnCSS-Online/dev-status.svg)](https://david-dm.org/pajasevi/UnCSS-Online?type=dev)
-[![GitHub issues](https://img.shields.io/github/issues/pajasevi/UnCSS-Online.svg)](https://github.com/pajasevi/UnCSS-Online/issues)
-[![Donate bitcoin](https://img.shields.io/badge/donate-bitcoin-blue.svg)](https://blockchain.info/address/35SwXe97aPRUsoaUTH1Dr3SB7JptH39pDZ)
 
 
-### Requirements:
+### Development requirements:
 
 - Node.js
+- [Yarn](http://yarnpkg.com)
+- [Now CLI](https://github.com/zeit/now-cli)
 
 ## Development
 
 ### Install dependencies
+```bash
+yarn global add now # install Now CLI
+yarn install # install dependencies
 ```
-npm install -g gulp
-npm install
-```
-
-### Build styles
-```
-gulp styles
-```
-
-### Run development server
-(builds styles and runs livereload)
-```
-gulp
+### Dev server
+```bash
+yarn run dev
 ```
 
-### Run tests
-```
-npm test
-```
+## Production deploy
 
-## Production
-
-### Install dependencies
-```
-npm install
+### Build project
+```bash
+yarn run build
 ```
 
-### Run app
-Deploy app to server...
-
-Set enviroment variables -> see file ```.env_example``` and make ```.env``` file
-
-Then run:
-```
-npm start
+### Deploy to Now
+```bash
+yarn run deploy
 ```
 
-You're welcome
 
-### License
+## License
 Distributed under the MIT license. See [LICENSE](LICENSE) for more information.

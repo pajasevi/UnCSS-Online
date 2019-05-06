@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "uncssOnline",
+  "routes": [
+    { "src": "/api/uncss/", "dest": "/api/uncss/", "methods": ["POST"] },
+    { "src": "/(.*)", "dest": "/dist/$1" }
+  ],
+  "builds": [
+    { "src": "/api/uncss/index.js", "use": "@now/node" },
+    { "src": "/dist/**/*.*", "use": "@now/static" }
+  ]
+}
