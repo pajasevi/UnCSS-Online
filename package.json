@@ -3,8 +3,8 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"parcel watch index.html\" \"now dev\"",
-    "build": "rm -rf dist && parcel build index.html",
+    "dev": "now dev",
+    "now-dev": "parcel watch index.html",
     "now-build": "parcel build index.html",
     "deploy": "now"
   },

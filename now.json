@@ -7,7 +7,11 @@
     { "src": "/(.*)", "dest": "/dist/$1" }
   ],
   "builds": [
-    { "src": "/api/uncss/index.js", "use": "@now/node" },
-    { "src": "/dist/**/*.*", "use": "@now/static" }
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "dist" }
+    },
+    { "src": "/api/uncss/index.js", "use": "@now/node" }
   ]
 }
