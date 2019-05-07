@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "concurrently \"parcel watch index.html\" \"now dev\"",
     "build": "rm -rf dist && parcel build index.html",
+    "now-build": "parcel build index.html",
     "deploy": "now"
   },
   "dependencies": {
