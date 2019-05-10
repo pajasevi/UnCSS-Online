@@ -1,28 +1,22 @@
-const express = require('express');
-const helmet = require('helmet');
+const { send, json } = require('micro');
 const assert = require('assert');
 const uncss = require('uncss');
-const multer  = require('multer');
 
-const upload = multer();
+module.exports = async (req, res) => {
+  const data = await json(req);
 
-const app = express();
-
-app.use(helmet());
-
-app.post('*', upload.array(), (req, res) => {
   try {
-    assert.ok(req.body.inputHtml, new Error('cannot process empty HTML'));
-    assert.ok(req.body.inputCss, new Error('cannot process empty CSS'));
+    assert.ok(data.inputHtml, new Error('cannot process empty HTML'));
+    assert.ok(data.inputCss, new Error('cannot process empty CSS'));
 
-    const html = req.body.inputHtml.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+    const html = data.inputHtml.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
 
     uncss(html, {
-      raw: req.body.inputCss,
+      raw: data.inputCss,
       banner: false,
       ignoreSheets: [/./]
     }, (error, output) => {
-      res.json({
+      send(res, 200,{
         outputCss: output,
         error: error
       });
@@ -30,10 +24,8 @@ app.post('*', upload.array(), (req, res) => {
   } catch (error) {
     console.error(error);
 
-    res.json({
+    send(res,400,{
       error: error
     });
   }
-});
-
-module.exports = app;
+};

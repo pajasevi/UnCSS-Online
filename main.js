@@ -4,6 +4,8 @@ import ClipboardJS from "clipboard";
 const submitButton = document.querySelector(".button-large");
 const outputArea = document.getElementById("outputCss");
 const form = document.getElementById("uncss-form");
+const inputHtml = document.getElementById("inputHtml");
+const inputCss = document.getElementById("inputCss");
 const formAction = "/api/uncss/";
 const formMethod = "POST";
 
@@ -37,12 +39,19 @@ form.addEventListener("submit", async (event) => {
 
   submitButton.classList.add("button-loading");
 
-  const formData = new FormData(form);
+  const sendData = {
+    inputHtml: inputHtml.value,
+    inputCss: inputCss.value
+  };
 
   try {
     const response = await fetch(formAction, {
       method: formMethod,
-      body: formData
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(sendData)
     });
     const data = await checkStatus(response);
     const jsonData = await parseJSON(data);
