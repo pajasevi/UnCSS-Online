@@ -1,13 +1,13 @@
 const { send, json } = require('micro');
-const assert = require('assert');
 const uncss = require('uncss');
+const serializeError = require('serialize-error');
 
 module.exports = async (req, res) => {
   const data = await json(req);
 
   try {
-    assert.ok(data.inputHtml, new Error('cannot process empty HTML'));
-    assert.ok(data.inputCss, new Error('cannot process empty CSS'));
+    if (!data.inputHtml) throw new Error('Cannot process empty HTML');
+    if (!data.inputCss) throw new Error('Cannot process empty CSS');
 
     const html = data.inputHtml.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
 
@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
       banner: false,
       ignoreSheets: [/./]
     }, (error, output) => {
-      send(res, 200,{
+      send(res, error ? 400 : 200,{
         outputCss: output,
         error: error
       });
@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
     console.error(error);
 
     send(res,400,{
-      error: error
+      error: serializeError(error)
     });
   }
 };

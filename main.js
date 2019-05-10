@@ -29,7 +29,7 @@ const checkCSS = (data) => {
   } else {
     const error = new Error(data.error.name);
     error.name = data.error.name;
-    error.message = data.error.reason + "; Line:" + (data.error.line - 1) + "; Column:" + data.error.column;
+    error.message = data.error.message ? data.error.message : data.error.reason + "; Line:" + (data.error.line - 1) + "; Column:" + data.error.column;
     throw error;
   }
 };

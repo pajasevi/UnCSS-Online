@@ -16,6 +16,7 @@
     "normalize.css": "^8.0.0",
     "regenerator": "^0.14.1",
     "regenerator-runtime": "^0.13.2",
+    "serialize-error": "^4.1.0",
     "uncss": "^0.16.2"
   },
   "devDependencies": {
