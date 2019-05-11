@@ -1,61 +1,42 @@
 import "regenerator-runtime/runtime";
 import ClipboardJS from "clipboard";
+import axios from "axios";
 
-const submitButton = document.querySelector(".button-large");
+const submitButton = document.getElementById("submitButton");
 const outputArea = document.getElementById("outputCss");
 const form = document.getElementById("uncss-form");
-const formAction = "/api/uncss/";
-const formMethod = "POST";
-
-const checkStatus = (response) => {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
-  } else {
-    const error = new Error(response.statusText);
-    error.response = response;
-    throw error;
-  }
-};
-
-const parseJSON = (response) => {
-  return response.json();
-};
-
-const checkCSS = (data) => {
-  if (!data.error) {
-    return data;
-  } else {
-    const error = new Error(data.error.name);
-    error.name = data.error.name;
-    error.message = data.error.reason + "; Line:" + (data.error.line - 1) + "; Column:" + data.error.column;
-    throw error;
-  }
-};
+const inputHtml = document.getElementById("inputHtml");
+const inputCss = document.getElementById("inputCss");
+const apiUrl = "/api/uncss/";
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   submitButton.classList.add("button-loading");
+  submitButton.setAttribute("disabled", true);
 
-  const formData = new FormData(form);
+  const data = {
+    inputHtml: inputHtml.value,
+    inputCss: inputCss.value
+  };
 
   try {
-    const response = await fetch(formAction, {
-      method: formMethod,
-      body: formData
-    });
-    const data = await checkStatus(response);
-    const jsonData = await parseJSON(data);
-    const cssData = await checkCSS(jsonData);
+    const response = await axios.post(apiUrl, data);
 
-    submitButton.classList.remove("button-loading");
-    outputArea.innerHTML = cssData.outputCss;
-    document.querySelector(".error").style.display = "none";
+    outputArea.value = response.data.outputCss;
+    document.querySelector(".error").setAttribute("hidden", true);
   } catch (error) {
+    if (error.response && error.response.data && error.response.data.error) {
+      document.querySelector(".error-name").innerText = error.response.data.error.name;
+      document.querySelector(".error-message").innerText = error.response.data.error.message;
+    } else {
+      document.querySelector(".error-name").innerText = error.name;
+      document.querySelector(".error-message").innerText = error.message;
+    }
+    document.querySelector(".error").removeAttribute("hidden");
+  } finally {
     submitButton.classList.remove("button-loading");
-    document.querySelector(".error-name").innerHTML = error.name;
-    document.querySelector(".error-message").innerHTML = error.message;
-    document.querySelector(".error").style.display = "block";
+    submitButton.removeAttribute("disabled");
   }
 }, false);
 
