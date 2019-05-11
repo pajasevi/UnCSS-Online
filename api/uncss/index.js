@@ -3,7 +3,7 @@ const uncss = require('uncss');
 const serializeError = require('serialize-error');
 
 module.exports = async (req, res) => {
-  const data = await json(req);
+  const data = await json(req, { limit: "6mb" });
 
   try {
     if (!data.inputHtml) throw new Error('Cannot process empty HTML');
