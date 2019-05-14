@@ -21,6 +21,9 @@ form.addEventListener("submit", async (event) => {
   };
 
   try {
+    if (!data.inputHtml) throw new Error('Cannot process empty HTML');
+    if (!data.inputCss) throw new Error('Cannot process empty CSS');
+
     const response = await axios.post(apiUrl, data);
 
     outputArea.value = response.data.outputCss;
