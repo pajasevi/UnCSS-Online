@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "now dev",
-    "now-dev": "parcel watch index.html",
+    "now-dev": "parcel serve index.html --port $PORT",
     "now-build": "parcel build index.html",
     "deploy": "now"
   },
