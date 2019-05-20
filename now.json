@@ -4,14 +4,10 @@
   "alias": "uncss-online.com",
   "routes": [
     { "src": "/api/uncss/", "dest": "/api/uncss/", "methods": ["POST"] },
-    { "src": "/(.*)", "dest": "/dist/$1" }
+    { "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", "headers": { "cache-control": "immutable,max-age=31536000" } }
   ],
   "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "dist" }
-    },
-    { "src": "/api/uncss/index.js", "use": "@now/node" }
+    { "src": "/api/uncss/index.js", "use": "@now/node" },
+    { "src": "next.config.js", "use": "@now/next" }
   ]
 }
