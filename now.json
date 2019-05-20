@@ -12,6 +12,6 @@
       "use": "@now/static-build",
       "config": { "distDir": "dist" }
     },
-    { "src": "/api/uncss/index.js", "use": "now-micro" }
+    { "src": "/api/uncss/index.js", "use": "@now/node" }
   ]
 }
