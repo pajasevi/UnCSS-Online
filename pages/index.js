@@ -64,10 +64,7 @@ class Homepage extends React.Component {
           <p>
             <strong>Simply UnCSS your styles online!</strong>
           </p>
-          <a
-            href="https://github.com/pajasevi/UnCSS-Online"
-            className="github-corner"
-          >
+          <a href="https://github.com/pajasevi/UnCSS-Online" className="github-corner">
             <svg
               width="64"
               height="64"
@@ -106,11 +103,7 @@ class Homepage extends React.Component {
             <li>Wait for magic to happen</li>
             <li>
               Unused CSS{" "}
-              <a
-                href="https://www.youtube.com/watch?v=DgS4DD0CgHs"
-                rel="noopener"
-                target="_blank"
-              >
+              <a href="https://www.youtube.com/watch?v=DgS4DD0CgHs" rel="noopener" target="_blank">
                 is gone
               </a>
               , take the rest and use it!
@@ -128,28 +121,17 @@ class Homepage extends React.Component {
             <div className="row">
               <div className="column">
                 <label htmlFor="inputHtml">Your HTML</label>
-                <textarea
-                  placeholder="Insert your HTML here"
-                  rows="20"
-                  name="inputHtml"
-                  id="inputHtml"
-                />
+                <textarea placeholder="Insert your HTML here" rows="20" name="inputHtml" id="inputHtml" />
               </div>
               <div className="column">
                 <label htmlFor="inputCss">Your CSS</label>
-                <textarea
-                  placeholder="Insert your CSS here"
-                  rows="20"
-                  name="inputCss"
-                  id="inputCss"
-                />
+                <textarea placeholder="Insert your CSS here" rows="20" name="inputCss" id="inputCss" />
               </div>
             </div>
             <div className="text-center">
               <button
                 id="submitButton"
-                className={`button button-large ${this.state.loading &&
-                  "button-loading"}`}
+                className={`button button-large ${this.state.loading && "button-loading"}`}
                 type="submit"
                 disabled={this.state.loading}
               >
@@ -180,9 +162,7 @@ class Homepage extends React.Component {
               >
                 Copy to clipboard
               </button>
-              {this.state.clipboardMessage && (
-                <p id="js-clipboard-message">{this.state.clipboardMessage}</p>
-              )}
+              {this.state.clipboardMessage && <p id="js-clipboard-message">{this.state.clipboardMessage}</p>}
             </div>
           </div>
 
@@ -196,24 +176,24 @@ class Homepage extends React.Component {
 
           <h3>What is this good for?</h3>
           <p>
-            Do you have static 404 or 500 page, bundled styles for the whole
-            site and you need only couple of CSS for these static pages to work?
-            Well, here you have the tool for that. You're welcome.
+            Do you have static 404 or 500 page, bundled styles for the whole site and you need only couple of CSS for
+            these static pages to work? Well, here you have the tool for that. You're welcome.
           </p>
         </div>
         <div className="footer clearfix">
           <div className="container">
             <span className="float-left">
-              <a href="https://github.com/pajasevi/UnCSS-Online" rel="noreferrer noopener">Github</a> |{" "}
-              <a href="https://github.com/giakki/uncss" rel="noreferrer noopener">UnCSS</a>
+              <a href="https://github.com/pajasevi/UnCSS-Online" rel="noreferrer noopener">
+                Github
+              </a>{" "}
+              |{" "}
+              <a href="https://github.com/giakki/uncss" rel="noreferrer noopener">
+                UnCSS
+              </a>
             </span>
             <span className="float-right">
               Made with &hearts; by{" "}
-              <a
-                href="https://twitter.com/pajasevi"
-                rel="noreferrer noopener"
-                target="_blank"
-              >
+              <a href="https://twitter.com/pajasevi" rel="noreferrer noopener" target="_blank">
                 @pajasevi
               </a>
             </span>

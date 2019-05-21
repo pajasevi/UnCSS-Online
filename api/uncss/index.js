@@ -9,10 +9,7 @@ module.exports = async (req, res) => {
     if (!data.inputHtml) throw new Error("Cannot process empty HTML");
     if (!data.inputCss) throw new Error("Cannot process empty CSS");
 
-    const html = data.inputHtml.replace(
-      /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
-      ""
-    );
+    const html = data.inputHtml.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
 
     uncss(
       html,

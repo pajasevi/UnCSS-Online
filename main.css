@@ -1,4 +1,3 @@
-
 *,
 *:before,
 *:after {
@@ -6,7 +5,7 @@
 }
 
 body {
-  background: url('/static/img/background.png') no-repeat center center #fff;
+  background: url("/static/img/background.png") no-repeat center center #fff;
   background-size: cover;
   box-sizing: border-box;
 }
@@ -105,13 +104,16 @@ textarea {
 }
 
 @keyframes octocat-wave {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(0);
   }
-  20%, 60% {
+  20%,
+  60% {
     transform: rotate(-25deg);
   }
-  40%, 80% {
+  40%,
+  80% {
     transform: rotate(10deg);
   }
 }
@@ -121,9 +123,9 @@ textarea {
     box-shadow: 0 0 0 15px #fff inset;
   }
   50% {
-    box-shadow: 0 0 0 5px #FFF inset;
+    box-shadow: 0 0 0 5px #fff inset;
   }
   100% {
-    box-shadow: 0 0 0 15px #FFF inset;
+    box-shadow: 0 0 0 15px #fff inset;
   }
 }
