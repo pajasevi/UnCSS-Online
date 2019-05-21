@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "now dev",
     "now-build": "next build",
+    "build": "next build",
     "deploy": "now"
   },
   "dependencies": {
