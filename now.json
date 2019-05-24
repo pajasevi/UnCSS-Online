@@ -9,5 +9,8 @@
   "builds": [
     { "src": "/api/uncss/index.js", "use": "@now/node" },
     { "src": "next.config.js", "use": "@now/next" }
-  ]
+  ],
+  "env": {
+    "SENTRY_DSN": "@sentry-dsn"
+  }
 }
