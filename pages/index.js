@@ -59,7 +59,7 @@ class Homepage extends React.Component {
       this.setState({ error: null, output: response.data.outputCss });
     } catch (error) {
       if (error.response && error.response.data && error.response.data.error) {
-        Sentry.captureException(error.response.data.error);
+        Sentry.captureEvent(error.response.data.error);
         this.setState({ error: error.response.data.error });
       } else {
         Sentry.captureException(error);
