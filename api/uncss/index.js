@@ -1,6 +1,9 @@
 const { send, json } = require("micro");
 const uncss = require("uncss");
 const serializeError = require("serialize-error");
+const Sentry = require('@sentry/node');
+
+Sentry.init({ dsn: process.env.SENTRY_DSN });
 
 module.exports = async (req, res) => {
   const data = await json(req, { limit: "14mb" });
@@ -19,6 +22,8 @@ module.exports = async (req, res) => {
         ignoreSheets: [/./]
       },
       (error, output) => {
+        Sentry.captureException(error);
+
         send(res, error ? 400 : 200, {
           outputCss: output,
           error: error
@@ -26,6 +31,7 @@ module.exports = async (req, res) => {
       }
     );
   } catch (error) {
+    Sentry.captureException(error);
     console.error(error);
 
     send(res, 400, {
