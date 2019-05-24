@@ -1,6 +1,6 @@
+import React from "react";
 import App, { Container } from "next/app";
 import Head from "next/head";
-import React from "react";
 
 import "normalize.css/normalize.css";
 import "milligram/dist/milligram.min.css";
