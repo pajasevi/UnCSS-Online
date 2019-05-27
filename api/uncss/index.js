@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
 
         send(res, error ? 400 : 200, {
           outputCss: output,
-          error: serializeError(error)
+          error: error ? serializeError(error) : undefined
         });
       }
     );
