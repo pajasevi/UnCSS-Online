@@ -4,7 +4,7 @@ import axios from "axios";
 import * as Sentry from '@sentry/browser';
 
 Sentry.init({
-  dsn: process.env.SENTRY_DSN
+  dsn: process.env.SENTRY_FE_DSN
 });
 
 const apiUrl = "/api/uncss/";

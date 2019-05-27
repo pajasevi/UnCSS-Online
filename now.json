@@ -11,6 +11,7 @@
     { "src": "next.config.js", "use": "@now/next" }
   ],
   "env": {
-    "SENTRY_DSN": "@sentry-dsn"
+    "SENTRY_BE_DSN": "@sentry-be-dsn",
+    "SENTRY_FE_DSN": "@sentry-fe-dsn"
   }
 }

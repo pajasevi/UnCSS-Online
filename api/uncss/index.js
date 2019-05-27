@@ -3,7 +3,7 @@ const uncss = require("uncss");
 const serializeError = require("serialize-error");
 const Sentry = require('@sentry/node');
 
-Sentry.init({ dsn: process.env.SENTRY_DSN });
+Sentry.init({ dsn: process.env.SENTRY_BE_DSN });
 
 module.exports = async (req, res) => {
   const data = await json(req, { limit: "14mb" });
