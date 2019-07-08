@@ -79,7 +79,7 @@ class Homepage extends React.Component {
           <p>
             <strong>Simply UnCSS your styles online!</strong>
           </p>
-          <a href="https://github.com/pajasevi/UnCSS-Online" className="github-corner">
+          <a href="https://github.com/pajasevi/UnCSS-Online" className="github-corner" aria-hidden="true">
             <svg
               width="64"
               height="64"
@@ -198,11 +198,11 @@ class Homepage extends React.Component {
         <div className="footer clearfix">
           <div className="container">
             <span className="float-left">
-              <a href="https://github.com/pajasevi/UnCSS-Online" rel="noreferrer noopener">
+              <a href="https://github.com/pajasevi/UnCSS-Online" rel="noreferrer noopener" target="_blank">
                 Github
               </a>{" "}
               |{" "}
-              <a href="https://github.com/giakki/uncss" rel="noreferrer noopener">
+              <a href="https://github.com/uncss/uncss" rel="noreferrer noopener" target="_blank">
                 UnCSS
               </a>
             </span>

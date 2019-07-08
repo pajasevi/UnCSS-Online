@@ -9,11 +9,12 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <meta charSet="UTF-8" />
           <meta name="viewport" content="width=device-width" />
           <meta name="description" content="Simply UnCSS your styles online!" />
+          <meta name="theme-color" content="#9b4dca" />
 
           <meta property="og:type" content="website" />
           <meta property="og:title" content="UnCSS Online!" />
