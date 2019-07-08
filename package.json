@@ -31,8 +31,10 @@
     "uncss": "^0.16.2"
   },
   "devDependencies": {
+    "autoprefixer": "^9.6.1",
     "cssnano": "^4.1.10",
     "cypress": "^3.3.1",
+    "postcss-nested": "^4.1.2",
     "prettier": "1.18.2",
     "webpack": "^4.34.0"
   }

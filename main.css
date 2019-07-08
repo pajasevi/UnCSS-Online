@@ -8,10 +8,8 @@ body {
   background: url("/static/img/background-small.png") no-repeat center center #fff;
   background-size: cover;
   box-sizing: border-box;
-}
 
-@media screen and (min-width: 540px) {
-  body {
+  @media screen and (min-width: 540px) {
     background: url("/static/img/background.png") no-repeat center center #fff;
     background-size: cover;
   }
@@ -79,20 +77,18 @@ textarea {
   padding: 2rem 2rem;
   background: #9b4dca;
   color: #fff;
-}
 
-.footer a {
-  color: currentColor;
-  text-decoration: underline;
-}
-
-.footer a:hover {
-  color: #ccc;
-}
-
-@media screen and (min-width: 40rem) {
-  .footer {
+  @media screen and (min-width: 40rem) {
     padding: 2rem 10rem;
+  }
+
+  & a {
+    color: currentColor;
+    text-decoration: underline;
+
+    &:hover {
+      color: #ccc;
+    }
   }
 }
 
