@@ -8,7 +8,7 @@ Sentry.init({
   dsn: process.env.SENTRY_FE_DSN
 });
 
-const apiUrl = "/api/uncss/";
+const apiUrl = "/api/uncss";
 
 class Homepage extends React.Component {
   constructor(props) {

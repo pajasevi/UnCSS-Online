@@ -1,12 +1,11 @@
-const { send, json } = require("micro");
-const uncss = require("uncss");
-const serializeError = require("serialize-error");
-const Sentry = require('@sentry/node');
+import uncss from "uncss";
+import serializeError from "serialize-error";
+import * as Sentry from '@sentry/node';
 
 Sentry.init({ dsn: process.env.SENTRY_BE_DSN });
 
-module.exports = async (req, res) => {
-  const data = await json(req, { limit: "14mb" });
+export default (req, res) => {
+  const data = req.body;
 
   try {
     if (!data.inputHtml) throw new Error("Cannot process empty HTML");
@@ -24,7 +23,7 @@ module.exports = async (req, res) => {
       (error, output) => {
         Sentry.captureException(error);
 
-        send(res, error ? 400 : 200, {
+        res.status(error ? 400 : 200).json({
           outputCss: output,
           error: error ? serializeError(error) : undefined
         });
@@ -34,7 +33,7 @@ module.exports = async (req, res) => {
     Sentry.captureException(error);
     console.error(error);
 
-    send(res, 400, {
+    res.status(400).json({
       error: serializeError(error)
     });
   }
