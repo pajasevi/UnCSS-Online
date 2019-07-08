@@ -13,6 +13,7 @@ body {
 @media screen and (min-width: 540px) {
   body {
     background: url("/static/img/background.png") no-repeat center center #fff;
+    background-size: cover;
   }
 }
 
