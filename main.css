@@ -5,9 +5,15 @@
 }
 
 body {
-  background: url("/static/img/background.png") no-repeat center center #fff;
+  background: url("/static/img/background-small.png") no-repeat center center #fff;
   background-size: cover;
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 540px) {
+  body {
+    background: url("/static/img/background.png") no-repeat center center #fff;
+  }
 }
 
 .container {
