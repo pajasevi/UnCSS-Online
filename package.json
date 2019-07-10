@@ -26,7 +26,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "serialize-error": "^4.1.0",
-    "uncss": "^0.17.0"
+    "uncss": "^0.16.2"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
