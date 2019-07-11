@@ -6,4 +6,5 @@ dist
 yarn-error.log
 .next
 videos
+screenshots
 .env
