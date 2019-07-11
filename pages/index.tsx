@@ -10,19 +10,31 @@ Sentry.init({
 
 const apiUrl = "/api/uncss";
 
-class Homepage extends React.Component {
+interface Props {}
+
+
+interface State {
+  loading: boolean;
+  error: Error | null;
+  clipboardMessage: string | null;
+  outputCss: string;
+}
+
+class Homepage extends React.Component<Props, State> {
   constructor(props) {
     super(props);
 
     this.state = {
       loading: false,
       error: null,
-      output: "",
-      clipboardMessage: null
+      clipboardMessage: null,
+      outputCss: "",
     };
   }
 
-  clipboardButton = React.createRef();
+  clipboardButton = React.createRef<HTMLButtonElement>();
+  inputHtml = React.createRef<HTMLTextAreaElement>();
+  inputCss = React.createRef<HTMLTextAreaElement>();
 
   componentDidCatch(error, errorInfo) {
     Sentry.withScope(scope => {
@@ -47,8 +59,8 @@ class Homepage extends React.Component {
     this.setState({ loading: true });
 
     const data = {
-      inputHtml: inputHtml.value,
-      inputCss: inputCss.value
+      inputHtml: this.inputHtml.current.value,
+      inputCss: this.inputCss.current.value
     };
 
     try {
@@ -57,7 +69,7 @@ class Homepage extends React.Component {
 
       const response = await axios.post(apiUrl, data);
 
-      this.setState({ error: null, output: response.data.outputCss });
+      this.setState({ error: null, outputCss: response.data.outputCss });
     } catch (error) {
       if (error.response && error.response.data && error.response.data.error) {
         Sentry.captureEvent(error.response.data.error);
@@ -74,7 +86,7 @@ class Homepage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="header">
+        <header className="header">
           <h1>UnCSS Online!</h1>
           <p>
             <strong>Simply UnCSS your styles online!</strong>
@@ -109,8 +121,8 @@ class Homepage extends React.Component {
               />
             </svg>
           </a>
-        </div>
-        <div className="container">
+        </header>
+        <main className="container">
           <h3>Usage:</h3>
           <ul>
             <li>Copy&amp;paste your HTML and CSS into boxes below</li>
@@ -136,17 +148,17 @@ class Homepage extends React.Component {
             <div className="row">
               <div className="column">
                 <label htmlFor="inputHtml">Your HTML</label>
-                <textarea placeholder="Insert your HTML here" rows="20" name="inputHtml" id="inputHtml" />
+                <textarea placeholder="Insert your HTML here" rows={20} name="inputHtml" id="inputHtml" ref={this.inputHtml} />
               </div>
               <div className="column">
                 <label htmlFor="inputCss">Your CSS</label>
-                <textarea placeholder="Insert your CSS here" rows="20" name="inputCss" id="inputCss" />
+                <textarea placeholder="Insert your CSS here" rows={20} name="inputCss" id="inputCss" ref={this.inputCss} />
               </div>
             </div>
             <div className="text-center">
               <button
                 id="submitButton"
-                className={`button button-large ${this.state.loading && "button-loading"}`}
+                className={`button button-large ${this.state.loading ? "button-loading" : ""}`}
                 type="submit"
                 disabled={this.state.loading}
               >
@@ -159,11 +171,11 @@ class Homepage extends React.Component {
               <label htmlFor="outputCss">Your shortened CSS</label>
               <textarea
                 placeholder="Take your shortened CSS and use it!"
-                rows="20"
+                rows={20}
                 name="outputCss"
                 id="outputCss"
                 readOnly
-                value={this.state.output}
+                value={this.state.outputCss}
               />
             </div>
           </div>
@@ -194,8 +206,8 @@ class Homepage extends React.Component {
             Do you have static 404 or 500 page, bundled styles for the whole site and you need only couple of CSS for
             these static pages to work? Well, here you have the tool for that. You're welcome.
           </p>
-        </div>
-        <div className="footer clearfix">
+        </main>
+        <footer className="footer clearfix">
           <div className="container">
             <span className="float-left">
               <a href="https://github.com/pajasevi/UnCSS-Online" rel="noreferrer noopener" target="_blank">
@@ -213,7 +225,7 @@ class Homepage extends React.Component {
               </a>
             </span>
           </div>
-        </div>
+        </footer>
       </React.Fragment>
     );
   }
