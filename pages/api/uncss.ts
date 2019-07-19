@@ -1,10 +1,11 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import uncss from "uncss";
 import serializeError from "serialize-error";
 import * as Sentry from '@sentry/node';
 
 Sentry.init({ dsn: process.env.SENTRY_BE_DSN });
 
-export default (req, res) => {
+export default (req: NextApiRequest, res: NextApiResponse) => {
   const data = req.body;
 
   try {
