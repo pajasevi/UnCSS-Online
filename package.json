@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/clipboard": "^2.0.1",
     "@types/isomorphic-fetch": "^0.0.35",
-    "@types/node": "^12.6.6",
+    "@types/node": "^12.6.8",
     "@types/react": "^16.8.23",
     "autoprefixer": "^9.6.1",
     "cssnano": "^4.1.10",
@@ -39,6 +39,6 @@
     "postcss-nested": "^4.1.2",
     "prettier": "1.18.2",
     "typescript": "^3.5.3",
-    "webpack": "^4.35.3"
+    "webpack": "^4.36.1"
   }
 }
