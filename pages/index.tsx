@@ -1,5 +1,4 @@
 import React from "react";
-import "isomorphic-fetch"; // until Cypress supports Fetch API
 import ClipboardJS from "clipboard";
 import axios from "axios";
 import * as Sentry from '@sentry/browser';

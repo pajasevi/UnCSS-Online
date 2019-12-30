@@ -1,6 +1,3 @@
-Cypress.on('window:before:load', win => {
-  win.fetch = null;
-});
 
 describe("Index page", () => {
   it('Visits the index page', () => {
