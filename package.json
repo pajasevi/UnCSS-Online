@@ -2,7 +2,7 @@
   "name": "uncss-online",
   "version": "0.2.0",
   "engines": {
-    "node": "8.x.x || 10.x.x"
+    "node": "10.x.x || 12.x.x"
   },
   "private": true,
   "scripts": {
