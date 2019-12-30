@@ -1,5 +1,5 @@
 import React from "react";
-import App, { Container } from "next/app";
+import App from "next/app";
 import Head from "next/head";
 
 import "normalize.css/normalize.css";
@@ -12,12 +12,12 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <React.Fragment>
         <Head>
           <title>UnCSS Online!</title>
         </Head>
         <Component {...pageProps} />
-      </Container>
+      </React.Fragment>
     );
   }
 }
