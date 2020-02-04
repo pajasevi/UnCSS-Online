@@ -32,7 +32,6 @@
   },
   "devDependencies": {
     "@types/clipboard": "^2.0.1",
-    "@types/isomorphic-fetch": "^0.0.35",
     "@types/node": "^13.7.0",
     "@types/react": "^16.9.19",
     "autoprefixer": "^9.7.4",
