@@ -9,11 +9,12 @@
     "now-dev": "now dev",
     "now-build": "next build",
     "build": "next build",
+    "start": "next start",
     "deploy": "now",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "test:tsc": "tsc --noEmit",
-    "test": "yarn test:tsc && start-server-and-test now-dev http://localhost:3000 cypress:run"
+    "test": "yarn test:tsc && yarn build && start-server-and-test start http://localhost:3000 cypress:run"
   },
   "dependencies": {
     "@sentry/browser": "^5.12.1",
