@@ -28,7 +28,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "serialize-error": "^5.0.0",
-    "uncss": "0.16.2"
+    "uncss": "0.17.2"
   },
   "devDependencies": {
     "@types/clipboard": "^2.0.1",
