@@ -1,6 +1,7 @@
 # UnCSS Online
 [![Dependency Status](https://david-dm.org/pajasevi/UnCSS-Online.svg)](https://david-dm.org/pajasevi/UnCSS-Online)
 [![devDependency Status](https://david-dm.org/pajasevi/UnCSS-Online/dev-status.svg)](https://david-dm.org/pajasevi/UnCSS-Online?type=dev)
+[![Build status](https://travis-ci.org/pajasevi/UnCSS-Online.svg?branch=master)](https://travis-ci.org/pajasevi/UnCSS-Online)
 
 
 ### Development requirements:
