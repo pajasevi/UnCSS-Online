@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/clipboard": "^2.0.1",
     "@types/node": "^13.7.1",
-    "@types/react": "^16.9.19",
+    "@types/react": "^16.9.20",
     "autoprefixer": "^9.7.4",
     "cssnano": "^4.1.10",
     "cypress": "^4.0.2",
