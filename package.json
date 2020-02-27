@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^5.12.5",
-    "@sentry/node": "5.12.4",
+    "@sentry/node": "5.12.5",
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.2",
     "clipboard": "^2.0.4",
