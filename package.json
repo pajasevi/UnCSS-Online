@@ -17,7 +17,7 @@
     "test": "yarn test:tsc && yarn build && start-server-and-test start http://localhost:3000 cypress:run"
   },
   "dependencies": {
-    "@sentry/browser": "^5.13.0",
+    "@sentry/browser": "^5.13.2",
     "@sentry/node": "5.13.1",
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.2",
