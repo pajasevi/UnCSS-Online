@@ -39,7 +39,7 @@
     "cypress": "^4.1.0",
     "postcss-nested": "^4.2.1",
     "prettier": "1.19.1",
-    "start-server-and-test": "^1.10.9",
+    "start-server-and-test": "^1.10.10",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0"
   }
