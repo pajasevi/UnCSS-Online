@@ -34,7 +34,7 @@
     "@types/clipboard": "^2.0.1",
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
-    "autoprefixer": "^9.7.5",
+    "autoprefixer": "^9.7.6",
     "cssnano": "^4.1.10",
     "cypress": "^4.3.0",
     "postcss-nested": "^4.2.1",
