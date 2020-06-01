@@ -1,11 +1,6 @@
 import React from "react";
 import ClipboardJS from "clipboard";
 import axios from "axios";
-import * as Sentry from '@sentry/browser';
-
-Sentry.init({
-  dsn: process.env.SENTRY_FE_DSN
-});
 
 const apiUrl = "/api/uncss";
 
@@ -34,13 +29,6 @@ class Homepage extends React.Component<Props, State> {
   clipboardButton = React.createRef<HTMLButtonElement>();
   inputHtml = React.createRef<HTMLTextAreaElement>();
   inputCss = React.createRef<HTMLTextAreaElement>();
-
-  componentDidCatch(error, errorInfo) {
-    Sentry.withScope(scope => {
-      scope.setExtras(errorInfo);
-      Sentry.captureException(error);
-    });
-  }
 
   componentDidMount() {
     const clipboard = new ClipboardJS(this.clipboardButton.current);
@@ -71,10 +59,8 @@ class Homepage extends React.Component<Props, State> {
       this.setState({ error: null, outputCss: response.data.outputCss });
     } catch (error) {
       if (error.response && error.response.data && error.response.data.error) {
-        Sentry.captureEvent(error.response.data.error);
         this.setState({ error: error.response.data.error });
       } else {
-        Sentry.captureException(error);
         this.setState({ error });
       }
     } finally {

@@ -1,9 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import uncss from "uncss";
 import { serializeError } from "serialize-error";
-import * as Sentry from '@sentry/node';
-
-Sentry.init({ dsn: process.env.SENTRY_BE_DSN });
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const data = req.body;
@@ -22,8 +19,6 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
         ignoreSheets: [/./]
       },
       (error, output) => {
-        Sentry.captureException(error);
-
         res.status(error ? 400 : 200).json({
           outputCss: output,
           error: error ? serializeError(error) : undefined
@@ -31,7 +26,6 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
       }
     );
   } catch (error) {
-    Sentry.captureException(error);
     console.error(error);
 
     res.status(400).json({
