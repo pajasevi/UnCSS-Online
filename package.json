@@ -34,7 +34,7 @@
     "@types/react": "^16.9.43",
     "autoprefixer": "^9.8.5",
     "cssnano": "^4.1.10",
-    "cypress": "^4.10.0",
+    "cypress": "^4.11.0",
     "postcss-nested": "^4.2.3",
     "prettier": "2.0.5",
     "start-server-and-test": "^1.11.2",
