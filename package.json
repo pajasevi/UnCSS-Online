@@ -23,7 +23,7 @@
     "milligram": "1.4.1",
     "next": "^9.5.5",
     "normalize.css": "^8.0.0",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "serialize-error": "^7.0.1",
     "uncss": "0.16.2"
