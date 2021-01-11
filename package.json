@@ -39,6 +39,6 @@
     "prettier": "2.2.1",
     "start-server-and-test": "^1.11.7",
     "typescript": "^4.1.3",
-    "webpack": "^4.44.2"
+    "webpack": "^4.45.0"
   }
 }
