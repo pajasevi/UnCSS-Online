@@ -1,13 +1,15 @@
 module.exports = {
-  plugins: [
-    require('postcss-nested')(),
-    require('autoprefixer')(),
-    require('cssnano')({
-      preset: ['default', {
-        discardComments: {
-          removeAll: true,
-        },
-      }]
-    }),
-  ],
+  plugins: process.env.NODE_ENV === "production" ? [
+    "postcss-nested",
+    "autoprefixer",
+    [
+      "cssnano", {
+        preset: ["default", {
+          discardComments: {
+            removeAll: true
+          }
+        }]
+      }
+    ]
+  ] : []
 };
