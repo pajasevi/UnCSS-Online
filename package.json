@@ -1,9 +1,6 @@
 {
   "name": "uncss-online",
   "version": "0.2.0",
-  "engines": {
-    "node": "12.x.x || 14.x.x"
-  },
   "private": true,
   "scripts": {
     "now-dev": "now dev",
