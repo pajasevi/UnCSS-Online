@@ -17,7 +17,7 @@
     "axios": "^0.21.1",
     "clipboard": "^2.0.6",
     "milligram": "1.4.1",
-    "next": "^10.0.7",
+    "next": "^10.0.8",
     "normalize.css": "^8.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
