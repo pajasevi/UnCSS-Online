@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@types/clipboard": "^2.0.7",
-    "@types/node": "^16.6.1",
+    "@types/node": "^16.9.2",
     "@types/react": "^17.0.20",
     "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.11",
