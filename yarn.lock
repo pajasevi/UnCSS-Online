@@ -671,14 +671,14 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-autoprefixer@^9.8.6:
-  version "9.8.6"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.8.6.tgz#3b73594ca1bf9266320c5acf1588d74dea74210f"
-  integrity sha512-XrvP4VVHdRBCdX1S3WXVD8+RyG9qeb1D5Sn1DeLiG2xfSpzellk5k54xbUERJ3M5DggQxes39UGOTP8CFrEGbg==
+autoprefixer@^9.8.7:
+  version "9.8.7"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.8.7.tgz#e3c12de18a800af1a1a8155fbc01dc7de29ea184"
+  integrity sha512-7Hg99B1eTH5+LgmUBUSmov1Z3bsggQJS7v3IMGo6wcScnbRuvtMc871J9J+4bSbIqa9LSX/zypFXJ8sXHpMJeQ==
   dependencies:
     browserslist "^4.12.0"
     caniuse-lite "^1.0.30001109"
-    colorette "^1.2.1"
+    nanocolors "^0.2.8"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^7.0.32"
@@ -1220,11 +1220,6 @@ color@^3.0.0:
   dependencies:
     color-convert "^1.9.1"
     color-string "^1.5.2"
-
-colorette@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
-  integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
 
 colorette@^1.2.2:
   version "1.2.2"
@@ -3469,6 +3464,11 @@ nan@^2.12.1:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
+
+nanocolors@^0.2.8:
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/nanocolors/-/nanocolors-0.2.9.tgz#319c5e7a73571abd60e4d273150c2cb95017ac5b"
+  integrity sha512-aymgS4Xe0LMqHOHl7jSUEkFh/6O/pcF0j61dBtreQZ1nmbyYdYjSYSJzz0iPLbKPkMtSmdRgyBGywNZGjKOEfw==
 
 nanoid@^3.1.23:
   version "3.1.24"
