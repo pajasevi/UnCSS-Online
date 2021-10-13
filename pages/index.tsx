@@ -44,8 +44,8 @@ const Homepage: NextPage = () => {
       setOutputCss(response.data.outputCss);
       setError(null);
     } catch (error) {
-      if (error.response && error.response.data && error.response.data.error) {
-        setError(error.response.data.error);
+      if (error?.response?.data?.error) {
+        setError(Error(error.response.data.error));
       } else {
         setError(error);
       }
