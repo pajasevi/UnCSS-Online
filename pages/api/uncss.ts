@@ -1,8 +1,26 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiHandler } from "next";
 import uncss from "uncss";
-import { serializeError } from "serialize-error";
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+const uncssPromise = (html: string, css: string): Promise<string> =>
+  new Promise((resolve, reject) => {
+    uncss(
+      html,
+      {
+        raw: css,
+        banner: false,
+        ignoreSheets: [/./],
+      },
+      (error: Error, output: string) => {
+        if (error) return reject(error);
+
+        return resolve(output);
+      }
+    );
+  });
+
+type Response = { outputCss: string } | { error: string }
+
+const handler: NextApiHandler<Response> = async (req, res) => {
   const data = req.body;
 
   try {
@@ -11,25 +29,16 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 
     const html = data.inputHtml.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
 
-    uncss(
-      html,
-      {
-        raw: data.inputCss,
-        banner: false,
-        ignoreSheets: [/./]
-      },
-      (error, output) => {
-        res.status(error ? 400 : 200).json({
-          outputCss: output,
-          error: error ? serializeError(error) : undefined
-        });
-      }
-    );
+    const result = await uncssPromise(html, data.inputCss);
+
+    res.status(200).json({ outputCss: result });
   } catch (error) {
     console.error(error);
 
     res.status(400).json({
-      error: serializeError(error)
+      error: error.message,
     });
   }
 };
+
+export default handler;

@@ -28,7 +28,10 @@ class MyDocument extends Document {
           <meta name="twitter:url" content="http://uncss-online.com" />
           <meta name="twitter:image" content="http://uncss-online.com/static/img/sharing.png" />
 
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic&display=swap" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic&display=swap"
+          />
           <link rel="icon" href="/static/img/favicon.ico" />
           <script
             dangerouslySetInnerHTML={{
@@ -37,10 +40,10 @@ class MyDocument extends Document {
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
+
           ga('create', 'UA-81909941-1', 'auto');
           ga('send', 'pageview');
-      `
+      `,
             }}
           />
         </Head>
