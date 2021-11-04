@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.6.1",
-    "@types/react": "^17.0.33",
+    "@types/react": "^17.0.34",
     "autoprefixer": "^10.3.7",
     "cssnano": "^5.0.10",
     "cypress": "^8.7.0",
