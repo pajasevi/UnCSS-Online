@@ -27,7 +27,7 @@
     "uncss": "0.16.2"
   },
   "devDependencies": {
-    "@types/node": "^16.6.1",
+    "@types/node": "^16.11.11",
     "@types/react": "^17.0.34",
     "autoprefixer": "^10.3.7",
     "cssnano": "^5.0.10",
