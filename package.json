@@ -33,7 +33,7 @@
     "cssnano": "^5.0.14",
     "cypress": "^8.7.0",
     "postcss-nested": "^5.0.6",
-    "prettier": "2.4.1",
+    "prettier": "2.5.1",
     "start-server-and-test": "^1.14.0",
     "typescript": "^4.5.4"
   }
