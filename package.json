@@ -29,7 +29,7 @@
   "devDependencies": {
     "@types/node": "^16.6.1",
     "@types/react": "^17.0.38",
-    "autoprefixer": "^10.3.7",
+    "autoprefixer": "^10.4.0",
     "cssnano": "^5.0.14",
     "cypress": "^8.7.0",
     "postcss-nested": "^5.0.6",
