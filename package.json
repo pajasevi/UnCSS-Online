@@ -30,7 +30,7 @@
     "@types/node": "^16.6.1",
     "@types/react": "^17.0.38",
     "autoprefixer": "^10.4.2",
-    "cssnano": "^5.0.16",
+    "cssnano": "^5.0.17",
     "cypress": "^9.4.1",
     "postcss-nested": "^5.0.6",
     "prettier": "2.5.1",
