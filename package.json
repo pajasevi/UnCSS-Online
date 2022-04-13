@@ -20,7 +20,7 @@
     "axios": "^0.27.0",
     "clipboard": "^2.0.10",
     "milligram": "1.4.1",
-    "next": "^12.1.0",
+    "next": "^12.1.5",
     "normalize.css": "^8.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
