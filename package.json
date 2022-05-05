@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "clipboard": "^2.0.10",
+    "clipboard": "^2.0.11",
     "milligram": "1.4.1",
     "next": "^12.1.6",
     "normalize.css": "^8.0.0",
