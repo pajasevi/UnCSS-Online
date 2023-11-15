@@ -30,7 +30,7 @@
     "@types/node": "^16.11.42",
     "@types/react": "^18.0.28",
     "autoprefixer": "^10.4.7",
-    "cssnano": "^5.1.12",
+    "cssnano": "^6.0.1",
     "cypress": "^10.3.0",
     "postcss": "8.x.x",
     "postcss-nested": "^5.0.6",
