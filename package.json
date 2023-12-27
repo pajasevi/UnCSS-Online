@@ -17,7 +17,7 @@
     "test": "yarn test:tsc && yarn build && start-server-and-test start http://localhost:3000 cypress:run"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.6.3",
     "clipboard": "^2.0.11",
     "milligram": "1.4.1",
     "next": "14.0.2",
