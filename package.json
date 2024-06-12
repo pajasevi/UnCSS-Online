@@ -34,7 +34,7 @@
     "cypress": "^10.3.0",
     "postcss": "8.x.x",
     "postcss-nested": "^5.0.6",
-    "prettier": "2.7.1",
+    "prettier": "3.3.2",
     "start-server-and-test": "^1.14.0",
     "typescript": "^5.4.5"
   }
