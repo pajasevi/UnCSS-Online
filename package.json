@@ -31,7 +31,7 @@
     "@types/react": "^18.3.0",
     "autoprefixer": "^10.4.18",
     "cssnano": "^5.1.12",
-    "cypress": "^10.3.0",
+    "cypress": "^13.15.1",
     "postcss": "8.x.x",
     "postcss-nested": "^5.0.6",
     "prettier": "2.7.1",
