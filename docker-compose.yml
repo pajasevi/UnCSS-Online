@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  uncss:
+    build: .
+    container_name: uncss
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+      - redis
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:4.4
+    container_name: uncss_mongo
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:alpine
+    container_name: uncss_redis
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+
+volumes:
+  mongo-data:
+  redis-data:
