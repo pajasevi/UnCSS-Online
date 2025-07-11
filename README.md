@@ -34,6 +34,25 @@ yarn run build
 yarn run deploy
 ```
 
+## 🐳 Docker Deployment
+#### You can easily run this project using Docker and Docker Compose.
+
+🔧 Requirements
+-Docker
+-Docker Compose
+
+📦 Steps
+```bash
+# Clone the repository
+git clone https://github.com/pajasevi/UnCSS-Online.git
+cd UnCSS-Online
+
+# Create environment file
+cp .env.docker .env  # optional; used only for Docker
+
+# Build and run containers
+docker-compose up -d --build
+```
 
 ## License
 Distributed under the MIT license. See [LICENSE](LICENSE) for more information.
