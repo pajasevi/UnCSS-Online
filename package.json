@@ -35,7 +35,7 @@
     "postcss": "8.x.x",
     "postcss-nested": "^5.0.6",
     "prettier": "2.7.1",
-    "start-server-and-test": "^1.14.0",
+    "start-server-and-test": "^2.1.3",
     "typescript": "^5.4.5"
   }
 }
